@@ -1,3 +1,4 @@
+ deployment:
   tasks:
     - export DEPLOYPATH=/home/badminto/public_html/badminton/
     - /bin/cp -R * $DEPLOYPATH

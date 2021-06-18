@@ -1,0 +1,38 @@
+.contex-menu-component {
+
+	background-color: lighten(map-get($ff-navbar, "background-color"), 100%);
+
+	display: block;
+	padding: 10px 5px;
+	border-radius: 5px;
+	box-shadow: 2px 2px 30px lightgrey;
+	position: absolute;
+
+	transform-origin: center;
+	z-index: 2;
+	opacity: 0.5;
+	transform: scale(0);
+	transition: transform 0.2s, opacity 0.2s;
+
+
+	.menu-item {
+		display: block;
+		//padding: 10px 30px;
+		transition: 0.1s;
+		color: #666;
+
+		&:hover{
+			background-color: #eee;
+			cursor: pointer;
+		}
+
+	}
+
+
+}
+
+.show{
+	opacity: 1;
+	transform: scale(1);
+	transform-origin: top left;
+}

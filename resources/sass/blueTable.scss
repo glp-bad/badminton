@@ -1,0 +1,42 @@
+table {
+	&.blueTable {
+		// border: 1px solid black;
+		background-color: $ff-background-color-wokbench;
+		width: 100%;
+		text-align: left;
+		border-collapse: collapse;
+		tbody {
+
+			tr{
+				&:hover{
+					background: lighten($ff-hover-color,35%);
+					cursor: pointer;
+				}
+			}
+			td {
+				font-size: 12px;
+			}
+		}
+		tr {
+			&:nth-child(even) {
+				background: lighten($ff-base,45%);
+			}
+		}
+		thead {
+			background: $ff-base;
+			th {
+				font-size: 12px;
+				font-weight: bold;
+				color: #FFFFFF;
+				// border-left: 1px solid darken($ff-base,70%);
+				// &:first-child {border-left: none;}
+				padding-left: 5px;
+			}
+		}
+
+	}
+}
+table.blueTable td, table.blueTable th {
+	border: 1px solid darken($ff-base,5%);
+	padding: 3px 2px;
+}

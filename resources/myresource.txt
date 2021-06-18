@@ -1,0 +1,16 @@
+Vue
+    npm install vue-router
+    npm install --save axios vue-axios
+
+
+--- icons
+	npm i --save @fortawesome/fontawesome-svg-core
+	npm i --save @fortawesome/free-solid-svg-icons
+	npm i --save @fortawesome/vue-fontawesome
+	npm i --save @fortawesome/free-brands-svg-icons
+    npm i --save @fortawesome/free-regular-svg-icons
+
+    sursa icon: https://fontawesome.com/v5.15/icons?d=gallery&p=2&s=solid&c=alert&m=free
+
+-- javascrip date-time manipulation
+   npm install date-fns --save

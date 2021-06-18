@@ -1,32 +1,68 @@
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
-
 require('./bootstrap');
 
-window.Vue = require('vue').default;
+import Vue from 'vue/dist/vue';
+window.Vue = Vue;
 
-/**
- * The following block of code may be used to automatically register your
- * Vue components. It will recursively scan this directory for the Vue
- * components and automatically register them with their "basename".
- *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
- */
+import VueRouter from 'vue-router';
+Vue.use(VueRouter);
 
-// const files = require.context('./', true, /\.vue$/i)
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
+import VueAxios from 'vue-axios';
+import axios  from 'axios';
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+import App from './App.vue';
+Vue.use(VueAxios, axios);
 
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
 
-const app = new Vue({
-    el: '#app',
+//---------------
+// ------- router
+import Routes from './routes'
+const router = new VueRouter({
+    routes: Routes,
+    mode: 'history'
 });
+
+// [Add code] Solve the Vue-Router's repeating point routing error in version 3.0
+const originalPush = VueRouter.prototype.push;
+VueRouter.prototype.push = function push(location) {
+    return originalPush.call(this, location).catch(err => err)
+}
+
+/*
+router.beforeEach(
+    (to, from, next) => {
+        if(Vue.prototype.isLogin) {
+            next();
+        }
+    }
+)
+*/
+
+// console.log(router.currentRoute.path);
+
+// ------- router
+//---------------
+
+import appHelper from "./plugin/appHelper";
+Vue.use(appHelper);
+
+// import isUndef from "./../../node_modules/vue/src/shared/util.js";
+// import vueUtil from "./../../node_modules/vue/types/";
+
+import ButtonComponent from './components/custom/ButtonComponent'
+Vue.component('ff-button', ButtonComponent);
+
+// font
+import { library }          from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon }  from '@fortawesome/vue-fontawesome'
+// import { faUserSecret }     from '@fortawesome/free-solid-svg-icons'
+// import { faFontAwesome } from '@fortawesome/free-brands-svg-icons'
+import { fas }     from '@fortawesome/free-solid-svg-icons'
+
+library.add(fas);
+Vue.component('font-awesome-icon', FontAwesomeIcon);
+
+const app = new Vue(Vue.util.extend({ router }, App)).$mount('#app');
+
+// const app = new Vue({ router }).$mount("#app");
+
+

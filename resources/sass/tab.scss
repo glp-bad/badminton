@@ -1,0 +1,93 @@
+.ff-tab{
+	width: 900px;
+
+	.headers{
+		display: flex;
+		ul {
+			display: inline-block;
+			position: relative;
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+
+			.header-li{
+				float: left;    // horizontal align
+				margin-right: 2px;
+				border-top-left-radius: 4px;
+				border-top-right-radius: 4px;
+
+				list-style-position:inside;
+				border-top: 1px solid black;
+				border-left: 1px solid black;
+				border-right: 1px solid black;
+
+				background-color: map_get($ff-tab, 'background-color');
+
+				.selectedOn {
+					background-color: $ff-background-color-wokbench;
+				}
+
+
+				.header-div{
+					padding: 2px 2px 0px 2px;
+					border-top-left-radius: 4px;
+					border-top-right-radius: 4px;
+
+					&:hover{
+						background-color: $ff-hover-color;
+					}
+
+					button {
+						border: none;
+						background-color: transparent;
+						font-size: map-get($ff-tab , "font-size-tab" );
+
+						&:focus {outline:none}
+
+						&.selected{
+							color:map-get($ff-tab , "font-color-selected" );
+						}
+
+						&:not(.selected):hover {
+							color: $ff-hover-color-font;
+						}
+					}
+
+					/*
+					a{
+
+						color: $ff-color-disabled;
+
+						&.selected{
+							color:map-get($ff-tab , "font-color-selected" );
+						}
+						&:not(.selected):hover {
+							color: $ff-hover-color-font;
+						}
+						&:link, &:visited, &:hover, &:active {
+							text-decoration: none;
+						}
+					}
+					*/
+
+
+				}
+			}
+		}
+	}
+	.tabs{
+		background-color: $ff-background-color-wokbench;
+		display: flex;
+		position: relative;
+
+		.tab{
+			display: none;
+			width: 100px;
+			height: 100px;
+		}
+
+
+	}
+
+}

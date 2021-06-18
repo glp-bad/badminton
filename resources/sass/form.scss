@@ -1,0 +1,51 @@
+.ff-form {
+	margin: 0 auto;
+	position: absolute;  // for draggale
+	z-index: 1000;
+	border: 1px solid;
+	box-shadow: 2px 2px 10px lightgrey;
+	height: auto;
+
+	.form-header {
+		background-color: darken(map-get($ff-modal-window, "caption-color"), 10%);
+		height: 20px;
+		// margin-bottom: 20px;
+		cursor: move;
+
+		.caption {
+			float: left;
+			color: map-get($ff-modal-window, "caption-color-font");
+			margin-left: 10px;
+		}
+
+		.closeButton {
+			float: right;
+			color: map-get($ff-modal-window, "caption-color-font");
+			margin-left: 10px;
+		}
+
+
+
+	}
+
+	.form-content{
+		background-color:	map-get($ff-modal-window, "background-color");
+		label{
+			display: inline-block;
+			width: 150px;
+			color: #777777;
+		}
+	}
+
+	.form-button{
+		background-color:	map-get($ff-modal-window, "background-color");
+	}
+
+	.form-bottom-line {
+		background-color: darken(map-get($ff-modal-window, "caption-color"), 10%);
+		height: 6px;
+		// margin-top: 8px;
+	}
+
+}
+

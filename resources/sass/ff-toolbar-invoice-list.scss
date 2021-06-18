@@ -1,0 +1,61 @@
+.ff-toolbar-invoice-list{
+	display:      flex;
+	flex-flow:    row;
+	justify-content: flex-start;
+	align-items: center;
+	padding: 4px;
+
+	// border-bottom: 2px inset darken($ff-base,10%);
+
+	box-shadow: 0px 4px 4px -6px darken($ff-base,35%);
+
+
+
+	$heighControl: 20px;
+
+	.datetime-picker {
+			$min-width: 70px;
+
+			margin-right: 10px;
+			margin-left: 5px;
+
+			min-width: $min-width;
+			input {
+				min-width: $min-width;
+				height: $heighControl;
+			}
+
+			.nav-l{
+				background-color: $ff-base;
+			}
+
+			.nav-r{
+				background-color: $ff-base;
+			}
+
+			.year-month-wrapper{
+				background-color: $ff-base;
+			}
+
+
+			.okButton{
+				color: darken($ff-base,25%);
+			}
+
+	}
+
+
+	// combobox
+	.single-select-wrapper{
+		margin-right: 10px;
+		margin-left: 5px;
+
+		width: 500px;
+		margin-bottom: 0px !important;
+		.search-input{
+			height: $heighControl;
+		}
+	}
+
+
+}

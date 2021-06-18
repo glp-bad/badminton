@@ -1,0 +1,293 @@
+
+// Colors
+$divHover: #2d995b;
+
+.containerMsg{
+	width: 800mm;
+	margin: auto;
+}
+
+
+.container{
+	display: flex;
+	flex-direction: row;
+}
+
+
+.shootList{
+	width: 40mm;
+	min-width: 40mm;
+	max-width: 40mm;
+	height: 240mm;
+	border: 1px solid #5d561b;
+
+	display: flex;
+	flex-direction: column;
+}
+
+.pointList{
+	width: 50mm;
+	min-width: 50mm;
+	max-width: 50mm;
+	height: 40mm;
+	border: 1px solid #5d561b;
+
+	display: flex;
+	flex-direction: column;
+
+}
+
+
+.shootTrainingList{
+	width: 90mm;
+	min-width: 90mm;
+	max-width: 90mm;
+	height: 240mm;
+	border: 1px solid #5d561b;
+
+	overflow-x: hidden;
+	overflow-y: auto;
+
+	display: flex;
+	flex-direction: column;
+
+	span:hover {
+		background-color: darkseagreen!important;
+		cursor: pointer;
+	}
+}
+
+
+.labelShoot{
+	z-index: 9999;
+	position: absolute;
+	// display:  none;
+	padding-right: 4px;
+	padding-left: 4px;
+	background-color: antiquewhite;
+	border: 1px solid #5d561b;
+	box-shadow: 4px 3px 8px 1px #23272b;
+
+	visibility: hidden;
+	opacity: 0;
+	//transition: opacity 1000ms, visibility 1000ms;
+	//transition: top 2s ease 0s; /* only transition top property */
+	//transition: left 2s ease 0s;
+	transition: all 1s ease;
+	top: 0; /* start transitioning from position '0' instead of 'auto' */
+	left: 0;
+}
+
+
+.bmc {
+	width: 800mm;
+	height: 240mm;
+	border: 2px solid darkgreen;
+	background-color: darkgreen;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	margin: auto;
+	padding-top: 5mm;
+
+
+	.backLine {
+		display: flex;
+		flex-direction: row;
+		margin-left: auto;
+		margin-right: auto;
+
+		.backDoubleLeft {
+			width: 15mm;
+			height: 25mm;
+			border-top: 4px solid white;
+			border-left: 4px solid white;
+			border-right: 2px solid white;
+			border-bottom: 2px solid white;
+
+			&:hover{
+				background-color: $divHover;
+				cursor: pointer;
+			}
+
+			.canvas-backDoubleLeft{
+				position: relative;
+			}
+		}
+
+		.backMiddleLeft {
+			width: 86mm;
+			height: 25mm;
+			border-top: 4px solid white;
+			border-left: 2px solid white;
+			border-right: 2px solid white;
+			border-bottom: 2px solid white;
+
+			&:hover{
+				background-color: $divHover;
+				cursor: pointer;
+			}
+		}
+
+		.backMiddleRight {
+			width: 86mm;
+			height: 25mm;
+			border-top: 4px solid white;
+			border-left: 2px solid white;
+			border-right: 2px solid white;
+			border-bottom: 2px solid white;
+
+			&:hover{
+				background-color: $divHover;
+				cursor: pointer;
+			}
+		}
+
+		.backDoubleRight {
+			width: 15mm;
+			height: 25mm;
+			border-top: 4px solid white;
+			border-left: 2px solid white;
+			border-right: 4px solid white;
+			border-bottom: 2px solid white;
+
+			&:hover{
+				background-color: $divHover;
+				cursor: pointer;
+			}
+		}
+	}
+
+
+	.middleLine {
+		display: flex;
+		flex-direction: row;
+		margin-left: auto;
+		margin-right: auto;
+
+
+		.middleDoubleLeft {
+			width: 15mm;
+			height: 130mm;
+			border-top: 2px solid white;
+			border-left: 4px solid white;
+			border-right: 2px solid white;
+			border-bottom: 2px solid white;
+
+			&:hover{
+				background-color: $divHover;
+				cursor: pointer;
+			}
+		}
+
+
+		.middleMiddleLeft {
+			width: 86mm;
+			height: 130mm;
+			border-top: 2px solid white;
+			border-left: 2px solid white;
+			border-right: 2px solid white;
+			border-bottom: 2px solid white;
+
+			&:hover{
+				background-color: $divHover;
+				cursor: pointer;
+			}
+
+			.canvas-middleMiddleLeft{
+				position: relative;
+				width:100%;
+				height:100%;
+				//width: 86mm;
+				//height: 130mm;
+			}
+
+		}
+
+
+		.middleMiddleRight {
+			width: 86mm;
+			height: 130mm;
+			border-top: 2px solid white;
+			border-left: 2px solid white;
+			border-right: 2px solid white;
+			border-bottom: 2px solid white;
+
+			&:hover{
+				background-color: $divHover;
+				cursor: pointer;
+			}
+		}
+
+
+		.middleDoubleRight {
+			width: 15mm;
+			height: 130mm;
+			border-top: 2px solid white;
+			border-left: 2px solid white;
+			border-right: 4px solid white;
+			border-bottom: 2px solid white;
+
+			&:hover{
+				background-color: $divHover;
+				cursor: pointer;
+			}
+		}
+
+
+
+	}
+
+	.netLine {
+		display: flex;
+		flex-direction: row;
+		margin-left: auto;
+		margin-right: auto;
+
+
+
+		.netLeft {
+			width: 15mm;
+			height: 66mm;
+			border-top: 2px solid white;
+			border-left: 4px solid white;
+			border-right: 2px solid white;
+			border-bottom: 4px dashed white;
+
+			&:hover{
+				background-color: $divHover;
+				cursor: pointer;
+			}
+		}
+
+		.netMiddle {
+			width: 172mm;
+			height: 66mm;
+			border-top: 2px solid white;
+			border-left: 2px solid white;
+			border-right: 2px solid white;
+			border-bottom: 4px dashed white;
+
+			&:hover{
+				background-color: $divHover;
+				cursor: pointer;
+			}
+		}
+
+		.netRight {
+			width: 15mm;
+			height: 66mm;
+			border-top: 2px solid white;
+			border-left: 2px solid white;
+			border-right: 4px solid white;
+			border-bottom: 4px dashed white;
+
+			&:hover{
+				background-color: $divHover;
+				cursor: pointer;
+			}
+		}
+
+	}
+
+}

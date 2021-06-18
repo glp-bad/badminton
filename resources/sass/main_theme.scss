@@ -1,0 +1,32 @@
+
+$ff-base:           #2d9aa8bd;
+$ff-secondary:      #78909c;
+$ff-dark-light:     #49cbe3;
+
+$ff-hover-color:                #474747;
+$ff-hover-color-font:           whitesmoke;
+$ff-color-disabled:             #4e4e4e;
+$ff-background-color-wokbench:  whitesmoke;
+
+$ff-button-font-size: 12px;
+$ff-button-font-color: whitesmoke;
+
+$ff-navbar:(
+	hover-color:        $ff-hover-color,
+	background-color:   $ff-base,
+
+);
+
+$ff-tab:(
+	hover-color:         $ff-hover-color,
+	background-color:    $ff-base,
+	font-color-selected: #000000,
+	font-size-tab:       12px
+);
+
+
+$ff-modal-window:(
+	caption-color: $ff-base,
+	caption-color-font: whitesmoke,
+	background-color: whitesmoke
+)

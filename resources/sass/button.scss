@@ -1,0 +1,23 @@
+.ff-button {
+	box-shadow: 2px 2px 4px -4px darken($ff-base,35%);
+	background-color: $ff-base;
+	border-radius: 4px;
+	display:inline-block;
+	cursor:pointer;
+	color:      $ff-button-font-color;
+	font-size:  $ff-button-font-size;
+	font-weight:bold;
+	padding:2px 12px;
+	text-decoration:none;
+
+	border: none;
+	&:hover{
+		background-color:darken($ff-base,20%);
+	}
+
+	&:active{
+		position:relative;
+		top:1px;
+	}
+
+}

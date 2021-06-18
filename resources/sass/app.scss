@@ -1,8 +1,29 @@
-// Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+@import "mixins";
 
 // Variables
 @import 'variables';
 
 // Bootstrap
-@import '~bootstrap/scss/bootstrap';
+@import '../../node_modules/bootstrap/scss/bootstrap';
+
+@include font-face(Nunito, "/fonts/nunito-v12-latin-regular", null, null, woff2);
+
+@import 'navbar';
+@import 'contextMenu';
+@import 'tab';
+@import 'blueTable';
+@import 'ff-toolbar-invoice-list';
+@import 'button';
+@import 'badminton-court';
+@import 'alertWindow';
+@import 'windowsLogin';
+@import 'form';
+
+body, html {
+	font-size:12px;
+}
+.workbench{
+	padding-left: 3px;
+	padding-right: 3px;
+}

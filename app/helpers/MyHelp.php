@@ -51,4 +51,8 @@ class MyHelp {
 		return $date->format($frm);
 	}
 
+	public static function responseJsonFormat($object){
+	    return json_encode($object);
+    }
+
 }

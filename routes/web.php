@@ -20,7 +20,9 @@ Route::get('/', function () {
 
 
 Auth::routes();
-Route::post('app/logout',  'Auth\LoginController@logout');
+Route::post('app/login',  'Auth\LoginController@loginProcess');
+Route::post('app/logout',  'Auth\LoginController@logout')->middleware('auth');
+
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

@@ -88,11 +88,12 @@
                             this.isLogin = true;
                             this.$emit(this.EMIT);
                         }else{
+
                             this.isLogin = false;
                             this.$emit(this.EMIT);
                         }
                     }
-                );
+                ).catch(error => console.log(error));
 
 
             }

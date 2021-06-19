@@ -3,7 +3,7 @@ export default [
         urlAppHosting: "https://badmintonclub.ro/",
         urlAppLocal: "http://localclub.ro/",
         forHosting: true},
-    {name: "login",             url: "login"},
+    {name: "login",             url: "app/login"},
 	{name: "logout",            url: "app/logout"},
 	{name: "test",              url: "app/testResponse"},
 	{name: "invoicesList",      url: "app/invoicesList"},

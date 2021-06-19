@@ -10,6 +10,9 @@ use Illuminate\Support\Facades\Auth;
 //use Illuminate\Support\Facades\DB;
 //use Illuminate\Support\Facades\Session;
 use \Illuminate\Http\Request;
+use App\Models\User;
+
+use MyHelp;
 
 class LoginController extends Controller
 {
@@ -40,12 +43,35 @@ class LoginController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest')->except('logout');
+        //$this->middleware('guest')->except('logout');
+        //$this->middleware('guest')->except('logoutProcess');
     }
+
+    public function loginProcess(Request $request){
+        $request->validate([
+            'email' => 'required',
+            'password' => 'required'
+        ]);
+
+        $credentials = $request->except(['_token']);
+        $user = User::where('email',$request->email)->first();
+        $message = null;
+        if (auth()->attempt($credentials)) {
+            $message = new MessageResponse(true,["log on"]);
+
+        }else{
+            $message = new MessageResponse(false,["autentificare esuata"]);
+
+        }
+
+        return MyHelp::responseJsonFormat($message);
+
+    }
+
 
     public function logout(Request $request){
         Auth::logout();
-        return json_encode(new MessageResponse(true,["log off"]));
+        return MyHelp::responseJsonFormat(new MessageResponse(true,["log off"]));
     }
 
     function redirectTo(){
@@ -59,7 +85,7 @@ class LoginController extends Controller
         Session::put(MyAppConstants::ID_USER, $idUser);
         */
     }
-
+/*
     protected function sendLoginResponse(Request $request){
         $message = new MessageResponse(true,["log on"]);
         return json_encode($message);
@@ -70,5 +96,5 @@ class LoginController extends Controller
        return json_encode($message);
     }
 
-
+*/
 }

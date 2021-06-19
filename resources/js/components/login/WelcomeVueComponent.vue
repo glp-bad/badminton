@@ -3,7 +3,7 @@
         <div class="flex-center position-ref full-height">
             <div class="content">
                 <div class="title m-b-md">
-                Finalf 0.1
+                BadmintonClub
             </div>
                 <div class="links">
                     <router-link to="/login">Login</router-link>

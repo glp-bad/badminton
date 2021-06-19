@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Finalf</title>
+    <title>BadmintonClub</title>
     <link href="{{ asset(mix('css/app.css')) }}" type="text/css" rel="stylesheet" />
     <meta name="csrf-token" value="{{ csrf_token() }}" />
 </head>

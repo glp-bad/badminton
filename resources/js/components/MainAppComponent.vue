@@ -66,7 +66,7 @@
 		data: () => ({
 			firstName: 'ha ha ha',
 			lastName: 'foo',
-            loginApp: true
+            loginApp: false
 		}),
 		methods: {
 			loginWindows: function () {

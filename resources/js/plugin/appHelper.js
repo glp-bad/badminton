@@ -17,7 +17,9 @@ const appHelper = {
 		}
 
 		Vue.prototype.$url = {
-				urlApp: "http://localhost/finalf/",
+		        forHosting: true,
+				urlAppHosting: "https://badmintonclub.ro/",
+                urlAppLocal: "http://localclub.ro/",
 				urlList: urlList,
 				getUrl: function (name) {
 					let objFind = this.urlList.find( data => data.name === name);
@@ -26,16 +28,21 @@ const appHelper = {
 						return "url for [" +name+ "] not found"
 					}
 
-					return this.urlApp + objFind.url;
+					return this.getUrlHosting() + objFind.url;
 				},
 				getRoot: function(){
-
-					return this.urlApp;
+                    return this.getUrlHosting();
 				},
 				getPathPdf: function(){
-
-					return this.urlApp + "public/pdf/" ;
-				}
+                    return this.getUrlHosting() + "public/pdf/" ;
+				},
+                getUrlHosting: function(){
+                    let url = this.urlAppLocal;
+                    if(this.forHosting){
+                        url = this.urlAppHosting;
+                    }
+                    return url;
+                }
 		},
 			Vue.prototype.$css = {
 				cssList: cssList,

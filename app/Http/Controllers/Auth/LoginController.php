@@ -4,11 +4,11 @@ namespace App\Http\Controllers\Auth;
 
 use App\helpers\response\MessageResponse;
 use App\Http\Controllers\Controller;
-use App\MyAppConstants;
+//use App\MyAppConstants;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Session;
+//use Illuminate\Support\Facades\DB;
+//use Illuminate\Support\Facades\Session;
 use \Illuminate\Http\Request;
 
 class LoginController extends Controller
@@ -52,9 +52,12 @@ class LoginController extends Controller
         //$user = Auth::user()->getAuthIdentifier();
         //dd($user->getAuthIdentifier());
         //Session::put(MyAppConstants::ID_AVOCAT, $user->getAuthIdentifier());
+
+        /*
         $email = Auth::user()->email;
         $idUser = DB::table('t_s_useri')->where('cmail', $email)->value('id_user');
         Session::put(MyAppConstants::ID_USER, $idUser);
+        */
     }
 
     protected function sendLoginResponse(Request $request){
@@ -64,7 +67,7 @@ class LoginController extends Controller
 
     protected function sendFailedLoginResponse(Request $request){
         $message = new MessageResponse(false,["autentificare esuata"]);
-        return json_encode($message);
+       return json_encode($message);
     }
 
 

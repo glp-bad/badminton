@@ -70,7 +70,7 @@
             this.URI  = this.$url.getUrl("login")
 	    },
 	    mounted() {
-		    this.post= {email:  "paul@madball.ro", password: "12345" };
+		    this.post= {email:  "gavrilapaul@hotmail.com", password: "" };
 		    this.$vanilla.dragDiv(this.$refs.windowRef, this.$refs.headerRef);
         },
         data(){

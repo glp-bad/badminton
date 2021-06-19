@@ -17,10 +17,11 @@ const appHelper = {
 		}
 
 		Vue.prototype.$url = {
-		        forHosting: true,
-				urlAppHosting: "https://badmintonclub.ro/",
-                urlAppLocal: "http://localclub.ro/",
-				urlList: urlList,
+                urlList: urlList,
+		        forHosting: urlList.find(data => data.name == 'appCfg').forHosting,
+				urlAppHosting: urlList.find(data => data.name == 'appCfg').urlAppHosting,
+                urlAppLocal: urlList.find(data => data.name == 'appCfg').urlAppLocal,
+
 				getUrl: function (name) {
 					let objFind = this.urlList.find( data => data.name === name);
 

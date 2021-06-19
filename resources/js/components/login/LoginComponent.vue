@@ -75,7 +75,7 @@
             this.URI  = this.$url.getUrl("login")
 	    },
 	    mounted() {
-		    this.post= {email:  "gavrilapaul@hotmail.com", password: "6s5g9g47yPYnv6m" };
+		    this.post= {email:  "", password: "" };
 		    this.$vanilla.dragDiv(this.$refs.windowRef, this.$refs.headerRef);
         },
         data(){

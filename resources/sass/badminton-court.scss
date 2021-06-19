@@ -29,12 +29,21 @@ $divHover: #2d995b;
 	width: 50mm;
 	min-width: 50mm;
 	max-width: 50mm;
-	height: 40mm;
+	height: auto;
 	border: 1px solid #5d561b;
+    padding-left: 5px;
 
 	display: flex;
 	flex-direction: column;
+    .loginButtom{
+        position: absolute;
+        bottom: 0px;
+        margin: 25px;
+    }
 
+    .div-sapce{
+        height: 10px;
+    }
 }
 
 

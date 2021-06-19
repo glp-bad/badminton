@@ -14,19 +14,23 @@
             <span>Shoot name: {{ labelShootName }}</span>
             <span>Specific zone: {{ labelSpecificZone }}</span>
             <span>Fluturasi: {{ labelLimitaFluturasi }}</span>
-
+            <span>---------------------------- </span>
+                <div class="div-sapce"></div>
+                <div class="div-sapce"></div>
+                <div class="div-sapce"></div>
             <button-clear :onClick="clearShoot"
                            :widthButton= 110
             >Clear shoot</button-clear>
-            <span>---------------------------- </span>
+                <div class="div-sapce"></div>
             <button-export :onClick="exportFileTraining"
                            :widthButton= 110
             >Export training</button-export>
 
-            <button-login :onClick="toLogin"
-                          :widthButton= 110>Login</button-login>
-
+            <div class="loginButtom">
+                <button class="ff-button-link" v-on:click="toLogin"><u>to login ... </u></button>
             </div>
+
+        </div>
 
             <div class = "bmc">
                 <div class = "backLine" @contextmenu.prevent="mouseRightClick">

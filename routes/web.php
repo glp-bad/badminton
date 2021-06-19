@@ -20,7 +20,7 @@ Route::get('/', function () {
 
 
 Auth::routes();
-Route::post('app/login',  'Auth\LoginController@loginProcess');
+Route::post('app/login',  'Auth\LoginController@loginProcess')->middleware("throttle:5,2");
 Route::post('app/logout',  'Auth\LoginController@logout')->middleware('auth');
 
 

@@ -1,6 +1,8 @@
 <template xmlns:v-slot="http://www.w3.org/1999/XSL/Transform">
 
     <div>
+
+        <div v-if="!initialSite">
             <div class="ff-navbar" v-if="loginApp">
                 <!--
                 <div id="fd">App page with menu and working screen </div>
@@ -27,7 +29,10 @@
                  ref="loginWindows"
                 @loginWindows = "loginWindows">
             </login-windows>
-
+        </div>
+        <bdminton-court v-else
+                @loginFromBadmintonCourt = "loginFromBadmintonCourt">
+         </bdminton-court>
      <router-view></router-view>
 
     </div>
@@ -39,13 +44,16 @@
 <script>
 
 	import LoginComponent from './login/LoginComponent.vue';
+    import BadmintonCourtComponent from '../components/app/BadmintonCourtComponent.vue';
+
 	export default {
 		name: "app-component",
 		created() {
 			this.URI_LOGOUT  = this.$url.getUrl("logout")
 		},
 		components: {
-			'login-windows': LoginComponent
+			'login-windows': LoginComponent,
+            'bdminton-court': BadmintonCourtComponent
 		},
 		mounted() {
 			this.firstName = "Primul nume";
@@ -66,9 +74,14 @@
 		data: () => ({
 			firstName: 'ha ha ha',
 			lastName: 'foo',
-            loginApp: false
+            loginApp: false,
+            initialSite: true
 		}),
 		methods: {
+            loginFromBadmintonCourt: function(){
+                this.initialSite = false;
+                this.$router.push('/main');
+            },
 			loginWindows: function () {
 				this.loginApp = this.$refs.loginWindows.$data.isLogin;
 				if(this.loginApp){

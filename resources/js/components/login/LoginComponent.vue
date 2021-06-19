@@ -26,6 +26,8 @@
 
                 <div class="form-group row">
                     <div class="col-md-6 offset-md-4">
+
+                        <!--
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" name="remember" id="remember" v-model="post.remember">
 
@@ -33,14 +35,17 @@
                                 Remember Me
                             </label>
                         </div>
+                        -->
                     </div>
                 </div>
 
                 <div class="form-group row mb-0">
                     <div class="col-md-8 offset-md-4">
                         <button type="submit" class="btn btn-primary">Login</button>
-
-                        <a class="btn btn-link" href="#">Forgot Your Password?</a>
+                        <!-- <a class="btn btn-link" href="#">Forgot Your Password?</a>-->
+                        <span style="color:  red" v-if="!isLogin && !intitialLogin">
+                            &nbsp; &nbsp; &nbsp; invalid credential
+                        </span>
                     </div>
                 </div>
             </form>
@@ -70,30 +75,35 @@
             this.URI  = this.$url.getUrl("login")
 	    },
 	    mounted() {
-		    this.post= {email:  "gavrilapaul@hotmail.com", password: "" };
+		    this.post= {email:  "gavrilapaul@hotmail.com", password: "6s5g9g47yPYnv6m" };
 		    this.$vanilla.dragDiv(this.$refs.windowRef, this.$refs.headerRef);
         },
         data(){
             return {
                 post:{},
-                isLogin: false
+                isLogin: false,
+                intitialLogin: true
             }
         },
         methods: {
             login(){
-	            this.$emit(this.EMIT);
+
 
                 this.axios.post(this.URI, this.post).then((response) => {
                         if(response.data.succes){
                             this.isLogin = true;
+                            this.intitialLogin = true;
+
                             this.$emit(this.EMIT);
                         }else{
-
                             this.isLogin = false;
+                            this.intitialLogin = false;
                             this.$emit(this.EMIT);
                         }
+
+
                     }
-                ).catch(error => console.log(error));
+                  ).catch(error => console.log(error));
 
 
             }

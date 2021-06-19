@@ -70,6 +70,9 @@ class LoginController extends Controller
 
 
     public function logout(Request $request){
+
+        //dd(Auth::user());
+
         Auth::logout();
         return MyHelp::responseJsonFormat(new MessageResponse(true,["log off"]));
     }

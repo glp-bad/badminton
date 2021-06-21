@@ -1,5 +1,6 @@
 /node_modules
 /public/storage
+/public/.htaccess
 /storage/*.key
 .env
 .env.backup

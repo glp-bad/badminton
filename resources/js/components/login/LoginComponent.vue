@@ -89,7 +89,8 @@
             login(){
 
 
-                this.axios.post(this.URI, this.post).then((response) => {
+
+                this.axios.post(this.URI, this.post, {headers: { 'Content-Type': 'application/json' ,   dataType: 'json' }}).then((response) => {
                         if(response.data.succes){
                             this.isLogin = true;
                             this.intitialLogin = true;

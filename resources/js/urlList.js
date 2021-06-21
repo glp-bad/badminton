@@ -1,7 +1,7 @@
 export default [
     {name: 'appCfg',
         urlAppHosting: "https://badmintonclub.ro/",
-        urlAppLocal: "http://localclub.ro/",
+        urlAppLocal: "https://localclub.ro/",
         forHosting: true,
         clientVersion: "0.9"},
     {name: "login",             url: "app/login"},
@@ -13,7 +13,5 @@ export default [
 	{name: "testInvoicePrint",  url: "app/testInvoicePrint"},
     {name: "partenersList",     url: "app/partenersList"},
 	{name: "addName",           url: "app/addName"}
-
-
 
 ]

@@ -1,17 +1,22 @@
+Header always set X-Content-Type-Options "nosniff"
+Header always append X-Frame-Options SAMEORIGIN
+Header set Strict-Transport-Security "max-age=31536000" env=HTTPS
+Header always set X-XSS-Protection "1;  mode=block"
 
-	    Header set Strict-Transport-Security "max-age=31536000" env=HTTPS
-		Header always set X-XSS-Protection "1;  mode=block"
-		Header always append X-Frame-Options SAMEORIGIN
-		Header always set X-Content-Type-Options "nosniff"
+#Header unset Content-Security-Policy
+#Header add Content-Security-Policy "default-src 'self'"
+Header unset X-Content-Security-Policy
+Header add X-Content-Security-Policy "default-src 'self'"
+Header unset X-WebKit-CSP
+Header add X-WebKit-CSP "default-src 'self'"
+Header set Content-Security-Policy-Report-Only "default-src 'self'...;"
+
+Header set Access-Control-Allow-Origin https://localclub.ro
+Header set Access-Control-Allow-Credentials true
+Header set Access-Control-Allow-Methods "GET,POST"
+Header set Access-Control-Allow-Headers "Content-Type, Authorization,x-requested-with"
 
 
-		#for Content-Security-Policy
-		#Header unset Content-Security-Policy
-        #Header add Content-Security-Policy "default-src 'self'"
-        Header unset X-Content-Security-Policy
-        Header add X-Content-Security-Policy "default-src 'self'"
-        Header unset X-WebKit-CSP
-        Header add X-WebKit-CSP "default-src 'self'"
 
         #only fi report
         #Header set Content-Security-Policy-Report-Only "default-src 'self'...;"

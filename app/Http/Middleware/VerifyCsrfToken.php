@@ -19,8 +19,6 @@ class VerifyCsrfToken extends Middleware
     public function handle($request, Closure $next)
     {
 
-        dd($request->method());
-
         // skip CSFR for options method
         if ($request->method() == 'OPTIONS')
         {

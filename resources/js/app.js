@@ -9,6 +9,11 @@ Vue.use(VueRouter);
 import VueAxios from 'vue-axios';
 import axios  from 'axios';
 
+axios.defaults.headers.common = {
+    'X-Requested-With': 'XMLHttpRequest',
+    'X-CSRF-TOKEN': window.csrf_token
+};
+
 import App from './App.vue';
 Vue.use(VueAxios, axios);
 

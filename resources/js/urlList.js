@@ -1,6 +1,6 @@
 export default [
     {name: 'appCfg',
-        urlAppHosting: "https://badmintonclub.ro/",
+        urlAppHosting: "https://www.badmintonclub.ro/",
         urlAppLocal: "https://localclub.ro/",
         forHosting: true,
         clientVersion: "0.9"},

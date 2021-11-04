@@ -19,6 +19,7 @@
                 <li><router-link to="/testTab">Tab test</router-link></li>
                 -->
                 <li><router-link to="/badmintonCourt">Badminton court</router-link></li>
+                <li><router-link to="/printLaravelTest">Print(test)</router-link></li>
 
                 <li style="float:right" v-on:click="logout"> <a href="javascript:void(null);">Logout</a> </li>
 

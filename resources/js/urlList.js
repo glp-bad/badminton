@@ -2,7 +2,7 @@ export default [
     {name: 'appCfg',
         urlAppHosting: "https://www.badmintonclub.ro/",
         urlAppLocal: "https://localclub.ro/",
-        forHosting: false,
+        forHosting: true,
         clientVersion: "0.9"},
     {name: "login",             url: "app/login"},
 	{name: "logout",            url: "app/logout"},
